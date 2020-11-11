@@ -5,32 +5,60 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;500;700&display=swap" rel="stylesheet">
   
   <title>Frontend Mentor | Article preview component</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
-
-  Shift the overall look and feel by adding these wonderful 
-  touches to furniture in your home
-
-  Ever been in a room and felt like something was missing? Perhaps 
-  it felt slightly bare and uninviting. I’ve got some simple tips 
-  to help you make any room feel complete.
-
-  Michelle Appleton
-  28 Jun 2020
-
-  Share
+  <div id="container">
+    <div class="article-preview">
+      <div class="article-preview__image">
+        <img src="./images/drawers.jpg" alt="photo of a dresser with a vase and display reading 'Love Will Keep Us Alive'"
+          width="" height="">
+      </div>
   
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+      <h2 class="article-preview__heading">Shift the overall look and feel by adding these wonderful touches to furniture
+        in your home</h2>
+  
+      <p class="article-preview__summary">Ever been in a room and felt like something was missing? Perhaps it felt
+        slightly bare and uninviting. I’ve got some simple tips to help you make any room feel complete.</p>
+  
+      <div class="share-toolbar">
+        <div class="share-toolbar__social-links">
+          <span>SHARE</span>
+          <img src="./images/icon-facebook.svg" alt="">
+          <img src="./images/icon-twitter.svg" alt="">
+          <img src="./images/icon-pinterest.svg" alt="">
+        </div>
+        <img src="./images/avatar-michelle.jpg" alt="Photo of Michelle Appleton" class="byline__avatar" width="40"
+          height="40">
+        <div class="share-toolbar__byline">
+      
+          <p class="byline__name">Michelle Appleton</p>
+          <p class="byline__date">28 Jun 2020</p>
+          
+        </div>
+        
+        <button class="share-toolbar__button"></button>
+        
+        </div>
+        
+        </div>
+
   </div>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=astroud" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="https://aaronstroud.com">Aaron Stroud</a>.
+  </div>
+  <script>
+    const button = document.querySelector('.share-toolbar__button');
+    const sharingToolbar = document.querySelector('.share-toolbar');
+
+    button.addEventListener('click', e => {
+      sharingToolbar.classList.toggle('share-toolbar--active');
+    });
+  </script>
+
 </body>
 </html>
