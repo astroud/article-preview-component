@@ -99,12 +99,22 @@ body {
 }
 
 .share-toolbar__button {
-  align-self: flex-end;
   background: no-repeat center url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='15' height='13'%3E%3Cpath fill='%236E8098' d='M15 6.495L8.766.014V3.88H7.441C3.33 3.88 0 7.039 0 10.936v2.049l.589-.612C2.59 10.294 5.422 9.11 8.39 9.11h.375v3.867L15 6.495z'/%3E%3C/svg%3E"), var(--light-grayish-blue);
   border: none;
   height: 32px;
-  width: 32px;
+  min-width: 32px;
   border-radius: 50%;
+  cursor: pointer;
+}
+
+.share-toolbar__button-wide-layout {
+  display: none;
+  background: no-repeat center url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='15' height='13'%3E%3Cpath fill='%236E8098' d='M15 6.495L8.766.014V3.88H7.441C3.33 3.88 0 7.039 0 10.936v2.049l.589-.612C2.59 10.294 5.422 9.11 8.39 9.11h.375v3.867L15 6.495z'/%3E%3C/svg%3E"), var(--light-grayish-blue);
+  border: none;
+  height: 32px;
+  min-width: 32px;
+  border-radius: 50%;
+  cursor: pointer;
 }
 
 .share-toolbar__button:hover, .share-toolbar--active .share-toolbar__button {
@@ -148,12 +158,6 @@ body {
   margin: 0 8px 0 8px;
 }
 
-
-
-
-
-
-
 .attribution {
   align-self: flex-end;
   width: 100%;
@@ -165,4 +169,70 @@ body {
 .attribution a {
   color: #133028;
   text-decoration-color: #307566;
+}
+
+@media screen and (min-width: 750px) {
+  .article-preview {
+    width: 730px;
+    height: 280px;
+    overflow: visible;
+  }
+
+  .article-preview__image {
+    height: 100%;
+    width: 350px;
+    border-radius: 10px;
+  }
+  
+  .wide-layout {
+    height: 100%;
+    width: calc(380px + 65px);
+    margin-left: -65px;
+    padding-top: 19px;
+    background: #fff;
+    padding-left: 8px;
+    border-radius: 0 10px 10px 0;
+  }
+
+  .share-toolbar__button {
+    display: none;
+  }
+
+  .share-toolbar__button-wide-layout {
+    display: block;
+  }
+
+  .article-preview__heading {
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 28px;
+    letter-spacing: 0.25px;
+    margin-bottom: 12px;
+  }
+
+  .article-preview__summary {
+    margin-bottom: 20px;
+  }
+  .share-toolbar {
+    justify-content: space-between;
+    width: 367px;
+    margin-left: 30px;
+    padding: 0;
+  }
+  .share-toolbar__byline {
+    width: 100%;
+  }
+  .byline__avatar {
+    box-shadow: none;
+  }
+  .byline__name {
+    width: 100%;
+    letter-spacing: 0.121875px;
+  }
+  .byline__date {
+    margin-top: -22px;
+  }
+  .share-toolbar__button {
+    
+  }
 }
