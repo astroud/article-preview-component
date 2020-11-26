@@ -55,11 +55,20 @@
     Coded by <a href="https://aaronstroud.com">Aaron Stroud</a>.
   </div>
   <script>
-    const button = document.querySelector('.share-toolbar__button');
-    const sharingToolbar = document.querySelector('.share-toolbar');
+    const buttonMobile = document.querySelector('.share-toolbar__button');
+    const buttonWideLayout = document.querySelector('.share-toolbar__button-wide-layout');
 
-    button.addEventListener('click', e => {
+    const sharingToolbar = document.querySelector('.share-toolbar');
+    const socialLinks = document.querySelector('.share-toolbar__social-links');
+
+    buttonMobile.addEventListener('click', e => {
       sharingToolbar.classList.toggle('share-toolbar--active');
+    });
+
+    buttonWideLayout.addEventListener('click', e => {
+      sharingToolbar.classList.toggle('share-toolbar--active-wide-layout');
+      socialLinks.classList.toggle('share-toolbar--active-wide-layout');
+
     });
   </script>
 
